@@ -10,6 +10,7 @@ addi x5, x0, 0
 
 #-- metemos el bucle
 bucle:
-addi x5, x5, +2
-#-- finalizamos bucle
-b bucle
+addi x5, x5, 2
+
+#-- repetimos bucle
+j bucle

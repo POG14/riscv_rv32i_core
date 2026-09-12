@@ -21,4 +21,6 @@ bucle:
 addi x3, x3, +1
 addi x4, x4, +3
 addi x5, x5, +5
-b bucle
+
+#repetir bucle indefinidamente
+j bucle

@@ -15,5 +15,7 @@ addi x6, x0, 6
 addi x7, x0, 7
 #-- x8=8
 addi x8, x0, 8
+
 #-- finalizar
+li a7, 10
 ecall
