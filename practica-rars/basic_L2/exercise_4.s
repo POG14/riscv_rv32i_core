@@ -17,9 +17,10 @@ li x5, 1
 li x6, 2
 li x7, 3
 li x8, 4
+li x15, 0               #-- contador
 
 #-- BUCLE
-bucle
+bucle:
 sub x9, x8, x7          #-- x9 = d-c
 addi x10, x9, 15        #-- x10 = d-c + 15
 add x11, x5, x6         #-- x11 = a + b
@@ -30,6 +31,9 @@ addi x5, x5, 1
 addi x6, x6, 1
 addi x7, x7, 1
 addi x8, x8, 1
+
+#-- contador para saber por que vuelta va
+addi x15, x15, 1
 j bucle                 #-- repetir ciclo indefinidamente
 
-#-- For the 10 iteraction, the result is 
+#-- For the 10 iteraction, the result is -5
