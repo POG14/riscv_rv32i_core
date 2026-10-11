@@ -1,2 +1,21 @@
+cat > ~/riscv_rv32i_core/.gitignore << 'EOF'
 .vscode/
 tempCodeRunnerFile
+
+# GHDL
+*.o
+*.cf
+*.vcd
+*.ghw
+work-obj*.cf
+
+# Vivado
+*.Xil/
+*.runs/
+*.cache/
+*.sim/
+*.hw/
+*.ip_user_files/
+*.jou
+*.log
+EOF
