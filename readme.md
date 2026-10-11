@@ -1,6 +1,4 @@
-cat > ~/riscv_rv32i_core/README.md << 'EOF'
 # riscv_rv32i_core
-
 Nucleo RISC-V RV32I (subconjunto base -> ISA completo -> pipeline de 5 etapas) disenado y verificado en VHDL, con testbenches autoverificables (sin depender de inspeccion visual de formas de onda) y ejecucion final en una FPGA Digilent Arty A7-35T.
 
 ## Estado actual
