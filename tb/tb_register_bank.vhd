@@ -51,6 +51,35 @@ begin
             report "FALLO: la carga no se propago"
             severity error;
         
+        -- leer y escribir la misma dirección en el mismo ciclo.
+        Wait until falling_edge(clk_i);
+        we_i <= '1';
+        ad_i <= "00100";            --mismo registro, el 4
+        d1_i <= x"00000002";        --valor nuevo
+        a1_i <= "00100";            --leyendo la misma dirección
+        
+        --aquí, SIN esperar a otro falling_edge, comprobamos de inmediato:
+        assert d1_o = x"00000001"
+            report "FALLO: debería leerse el valor viejo mientras la escritura nueva aun no se ha capturado"
+            severity error;
+
+        wait until falling_edge(clk_i); -- ahora sí dejamos pasar el flanco que captura la escritura
+
+        assert d1_o = x"00000002"
+            report "FALLO: la escritura nueva no se propago al siguiente ciclo"
+            severity error;
+
+        --we_i = 0 -> la salida no CAMBIA respecto a lo que ya había
+        wait until falling_edge(clk_i);
+        we_i <= '0';
+        ad_i <= "00100";            --mismo registro, el 4
+        d1_i <= x"00000003";        --valor nuevo
+        a1_i <= "00100";            --leyendo la misma dirección
+        wait until falling_edge(clk_i);
+        assert d1_o = x"00000002"
+            report "FALLO: la salida no debería haber cambiado"
+            severity error;
+
             report "Test completado"
         severity note;
 
