@@ -58,11 +58,10 @@ begin
         end loop;
         --Bug de compilación
         assert errores = 0
-            report "Todos los test del adder han pasado correctamente"
-            severity note;
-        assert errores = 0
             report integer'image(errores) & "fallo(s) detectado(s) en el adder"
             severity failure;
+
+        report "Todos los test del adder han pasado correctamente";
 
         wait;
     end process;
