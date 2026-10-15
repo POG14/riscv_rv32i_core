@@ -2,8 +2,8 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity immediate_generator_tb is
-end entity immediate_generator_tb;
+entity tb_immediate_generator is
+end entity tb_immediate_generator;
 
 architecture bench of immediate_generator_tb is
   -- Clock period
