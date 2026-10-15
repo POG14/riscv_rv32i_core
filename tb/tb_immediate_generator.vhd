@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 entity tb_immediate_generator is
 end entity tb_immediate_generator;
 
-architecture bench of immediate_generator_tb is
+architecture bench of tb_immediate_generator is
   -- Clock period
   constant clk_period : time := 5 ns;
   -- Generics
